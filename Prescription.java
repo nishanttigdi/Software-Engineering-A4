@@ -13,7 +13,7 @@ public class Prescription {
     private float cylinder;
     private Date examinationDate;
     private String optometrist;
-    private ArrayList<String> postRemarks = new ArrayList<>(); // Ensure initialization of remarks list
+    private ArrayList<String> postRemarks = new ArrayList<>(); //initialization of remarks list
     private static final int MAX_REMARKS = 2; // Maximum of 2 remarks allowed
 
     // Setters for the Prescription fields
@@ -49,7 +49,7 @@ public class Prescription {
         this.optometrist = optometrist;
     }
 
-    // Method to add a prescription with validation
+    // add a prescription with validation
     public boolean addPrescription() {
         // Validation logic...
         if (firstName.length() < 4 || firstName.length() > 15) {
@@ -109,7 +109,7 @@ public class Prescription {
         }
     }
 
-    // Method to add a remark with validation
+    // add a remark with validation
     public boolean addRemark(String remark, String category) {
         // Debug: Print the current number of remarks
         System.out.println("Current number of remarks: " + postRemarks.size());
@@ -135,7 +135,7 @@ public class Prescription {
 
         // If validation passes, add the remark to the file and to the list
         postRemarks.add(remark);  // Add the remark to the list
-        System.out.println("Remark added successfully. Total remarks now: " + postRemarks.size());  // Debug: Print the number of remarks after adding
+        System.out.println("Remark added successfully. Total remarks now: " + postRemarks.size());  
 
         saveRemarkToFile(remark, category);
         return true;
